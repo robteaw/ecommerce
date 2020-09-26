@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% block base_head %}
+<link rel="stylesheet" href="{ static 'css/style.css'}">
+{% endblock %}
+
+    <h1>Movie City</h1>
+    {% if request.user.is_authenticated %}
+    <div class="row">
+        <div class="col">
+            <h1>Movie City</h1>
+            {{ premium_content }}
+        </div>
+    </div>
+    {% endif %}
+{% endblock content %}

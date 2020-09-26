@@ -21,8 +21,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-from carts.views import cart
-
 from .views import home, about, contact, login_page, register_page
 
 urlpatterns = [
@@ -30,7 +28,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
-    path('cart/', cart, name='cart'),
+    path('cart/', include('carts.urls', namespace='cart')),
     path('login/', login_page, name='login'),
     path('register/', register_page, name='register'),
     path('products/', include('products.urls', namespace='products')),

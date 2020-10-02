@@ -37,10 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'products',
     'search',
     'tags',
     'carts',
+    'orders',
+    'accounts',
+    'billing',
+    'addresses'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGOUT_REDIRECT_URL = '/login/'    # directs to login page instead of admin
 ROOT_URLCONF = 'ecommerce.urls'
 
 TEMPLATES = [
